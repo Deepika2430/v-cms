@@ -1,35 +1,53 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import { ThemeProvider } from '@/components/theme-provider';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import Hero from '@/components/Hero';
+import About from '@/components/About';
+import Offerings from '@/components/Offerings';
+import Gallery from '@/components/Gallery';
+import { Toaster } from '@/components/ui/toaster';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [currentPage, setCurrentPage] = useState('home');
+
+  const renderPage = () => {
+    switch (currentPage) {
+      case 'home':
+        return (
+          <>
+            <Hero />
+            <About />
+            <Offerings />
+          </>
+        );
+      case 'about':
+        return <About fullPage />;
+      case 'offerings':
+        return <Offerings fullPage />;
+      case 'gallery':
+        return <Gallery />;
+      case 'contact':
+        return <div className="container py-12">Contact page content</div>;
+      case 'embedded':
+        return <div className="container py-12">Embedded Systems Development content</div>;
+      default:
+        return <Hero />;
+    }
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <ThemeProvider defaultTheme="light">
+      <div className="min-h-screen flex flex-col">
+        <Header onNavigate={setCurrentPage} currentPage={currentPage} />
+        <main className="flex-grow">
+          {renderPage()}
+        </main>
+        <Footer />
+        <Toaster />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </ThemeProvider>
+  );
 }
 
-export default App
+export default App;
