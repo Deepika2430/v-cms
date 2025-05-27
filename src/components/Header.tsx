@@ -34,25 +34,25 @@ const Header = ({ onNavigate, currentPage }: HeaderProps) => {
   };
 
   return (
-    <header className="border-b sticky bg-background">
+    <header className="border-b sticky">
       {/* Top Info Bar */}
-      <div className="hidden md:flex mx-auto items-center py-12 pl-4 bg-muted/30 space-x-16 w-[90%]">
+      <div className="hidden md:flex items-center pt-12 pb-6 mx-[101.500px] space-x-14">
         <div className="flex items-center space-x-8">
           {/* First Logo */}
           <img
-            src="https://vismayee.com/wp-content/uploads/2023/11/Edutek-Logo-300x84.png"
+            src="https://vismayee.com/wp-content/uploads/2023/11/Edutek-Logo.png"
             alt="Edutek Logo"
-            className="h-[94px] w-auto"
+            className="w-370px h-103px"
           />
           {/* Second Logo */}
           <img
             src="https://vismayee.com/wp-content/uploads/2023/11/Asset-14.svg"
             alt="Second Logo"
-            className="h-10 w-auto object-contain"
+            className="h-48px w-[163px] object-contain"
           />
         </div>
 
-        <div className="flex items-center space-x-12 text-sm">
+        <div className="flex space-x-12 text-sm pl-16">
           <div className="flex flex-col">
             <div className="flex items-center ">
               <Phone size={16} className="text-orange-500 mr-1" />
@@ -71,10 +71,10 @@ const Header = ({ onNavigate, currentPage }: HeaderProps) => {
       </div>
 
       {/* Orange Line */}
-      <div className="w-[90%] mx-auto h-1 bg-orange-500" />
+      <div className=" mx-[101.500px] h-0.5 bg-orange-500" />
 
       {/* Main Navigation */}
-      <div className="container mx-auto w-[90%] py-4 flex justify-between items-center">
+      <div className="container mx-[101.500px] w-[90%] pt-4 flex justify-between items-center">
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center space-x-4">
           <NavItem
@@ -91,10 +91,10 @@ const Header = ({ onNavigate, currentPage }: HeaderProps) => {
             <DropdownMenuTrigger asChild>
               <button
                 className={cn(
-                  "px-3 py-2 rounded-md text-2xl font-medium flex items-center transition-colors",
+                  "px-3 py-2 rounded-md text-[21px] font-medium font-questrial flex items-center transition-colors",
                   currentPage === "offerings"
-                    ? "text-orange-700 underline font-bold"
-                    : "text-purple-700 hover:text-orange-700 hover:underline"
+                    ? "text-orange-500 underline font-bold"
+                    : "text-[#761587] hover:text-orange-500 hover:underline"
                 )}
               >
                 Offerings <ChevronDown size={16} className="ml-1" />
@@ -126,9 +126,9 @@ const Header = ({ onNavigate, currentPage }: HeaderProps) => {
             onClick={() => handleNavigate("embedded")}
           />
 
-          <div className="ml-4 flex items-center space-x-2">
+          <div className="ml-4 flex items-center space-x-5 pl-20">
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/sreevismayeeedutek/"
               target="_blank"
               rel="noreferrer"
               className="text-muted-foreground hover:text-purple-600"
@@ -136,20 +136,18 @@ const Header = ({ onNavigate, currentPage }: HeaderProps) => {
               <Instagram size={20} />
             </a>
             <a
-              href="https://facebook.com"
+              href="https://www.facebook.com/SreeVismayeeEdutek/"
               target="_blank"
               rel="noreferrer"
               className="text-muted-foreground hover:text-blue-600"
             >
               <Facebook size={20} />
             </a>
-            <ThemeToggle />
           </div>
         </nav>
 
         {/* Mobile Nav Toggle */}
         <div className="flex items-center md:hidden space-x-4">
-          <ThemeToggle />
           <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon">
@@ -210,17 +208,17 @@ const Header = ({ onNavigate, currentPage }: HeaderProps) => {
                       <span>Mon - Sun: 9 AM - 9 PM</span>
                     </div>
                   </div>
-                  <div className="mt-4 flex space-x-4">
+                  <div className="mt-4 flex space-x-4 bg-blue-500 ">
                     <a
-                      href="https://instagram.com"
+                      href="https://www.instagram.com/sreevismayeeedutek/"
                       target="_blank"
                       rel="noreferrer"
-                      className="text-muted-foreground hover:text-purple-600"
+                      className="text-muted-foreground hover:text-purple-600 border-2 border-blue-500 rounded-full p-2"
                     >
                       <Instagram size={20} />
                     </a>
                     <a
-                      href="https://facebook.com"
+                      href="https://www.facebook.com/SreeVismayeeEdutek/"
                       target="_blank"
                       rel="noreferrer"
                       className="text-muted-foreground hover:text-blue-600"
@@ -249,10 +247,10 @@ const NavItem = ({ label, active, onClick }: NavItemProps) => {
     <button
       onClick={onClick}
       className={cn(
-        "px-3 py-2 rounded-md text-2xl font-medium transition-colors",
+        "px-3 py-2 rounded-md text-[21px] font-medium font-questrial",
         active
-          ? "text-orange-700 underline font-bold"
-          : "text-purple-700 hover:text-orange-700 hover:underline"
+          ? "text-orange-500 underline font-bold"
+          : "text-[#761587] hover:text-orange-500 hover:underline"
       )}
     >
       {label}
