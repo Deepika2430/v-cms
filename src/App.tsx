@@ -6,7 +6,11 @@ import Hero from '@/components/Hero';
 import About from '@/components/About';
 import Offerings from '@/components/Offerings';
 import Gallery from '@/components/Gallery';
+
 import { Toaster } from '@/components/ui/toaster';
+import WelcomeSection from './components/SmartAcedamy';
+import SkillBadges from './components/Skillbadges';
+import CourseLevelsSection from './components/FindYourCourse';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -17,6 +21,9 @@ function App() {
         return (
           <>
             <Hero />
+            <WelcomeSection />
+            <SkillBadges />
+            <CourseLevelsSection />
             <About />
             <Offerings />
           </>

@@ -10,7 +10,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        questrial: ['Questrial', 'sans-serif'],
+        sans: ['Poppins', 'ui-sans-serif', 'system-ui'],
       },
       borderRadius: {
         lg: 'var(--radius)',
@@ -68,10 +68,15 @@ export default {
           from: { height: 'var(--radix-accordion-content-height)' },
           to: { height: '0' },
         },
+        slideIn: {
+          '0%': { transform: 'translateX(40px)', opacity: '0' },
+          '100%': { transform: 'translateX(0)', opacity: '1' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        slide: 'slideIn 0.6s ease-out',
       },
     },
   },
