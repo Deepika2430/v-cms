@@ -4,7 +4,7 @@ import { CircleImage } from "./CircleImage";
 const Hero = () => {
   return (
     <section className="relative overflow-hidden py-12 md:py-20 bg-background">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-2">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div className="max-w-[100%] space-y-6 pl-20">
             <h1 className="text-[45px] leading-[60px] font-[400] text-[#761587] font-[Poppins,sans-serif] ">
@@ -30,26 +30,26 @@ const Hero = () => {
           </div>
 
           <div className="relative">
-            <div className="grid grid-cols-2 gap-8">
+            <div className="grid grid-cols-2 gap-12 pt-0">
               <CircleImage
                 src="https://images.pexels.com/photos/8535214/pexels-photo-8535214.jpeg"
                 alt="Child with robot"
-                className="ml-auto"
+                className="ml-auto mt-0 w-40 h-40 md:w-60 md:h-60"
               />
               <CircleImage
                 src="https://images.pexels.com/photos/8535213/pexels-photo-8535213.jpeg"
                 alt="Child using computer"
-                className="mt-12"
+                className="mt-[40%] w-36 h-36 md:w-64 md:h-64"
               />
               <CircleImage
                 src="https://images.pexels.com/photos/8364026/pexels-photo-8364026.jpeg"
                 alt="Child with molecular model"
-                className="ml-auto"
+                className="ml-auto mt-[-20%] w-44 h-44 md:w-60 md:h-60"
               />
               <CircleImage
                 src="https://images.pexels.com/photos/8613089/pexels-photo-8613089.jpeg"
                 alt="Child with circuit board"
-                className="mt-4"
+                className="mt-31 w-48 h-48 md:w-64 md:h-64"
               />
             </div>
           </div>
