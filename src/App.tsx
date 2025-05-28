@@ -22,13 +22,10 @@ function App() {
         return (
           <>
             <Hero />
-<<<<<<< HEAD
-            <LearningPathways />
-=======
             <WelcomeSection />
+            <LearningPathways />
             <SkillBadges />
             <CourseLevelsSection />
->>>>>>> 6a62b97a144015ac1fe817605d0ff785fb2856ad
             <About />
             <Offerings />
           </>
