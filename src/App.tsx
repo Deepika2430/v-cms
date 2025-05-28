@@ -3,6 +3,7 @@ import { ThemeProvider } from '@/components/theme-provider';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Hero from '@/components/Hero';
+import LearningPathways from "@/components/LearningPathways";
 import About from '@/components/About';
 import Offerings from '@/components/Offerings';
 import Gallery from '@/components/Gallery';
@@ -17,6 +18,7 @@ function App() {
         return (
           <>
             <Hero />
+            <LearningPathways />
             <About />
             <Offerings />
           </>
