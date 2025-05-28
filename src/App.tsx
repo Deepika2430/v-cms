@@ -7,7 +7,11 @@ import LearningPathways from "@/components/LearningPathways";
 import About from '@/components/About';
 import Offerings from '@/components/Offerings';
 import Gallery from '@/components/Gallery';
+
 import { Toaster } from '@/components/ui/toaster';
+import WelcomeSection from './components/SmartAcedamy';
+import SkillBadges from './components/Skillbadges';
+import CourseLevelsSection from './components/FindYourCourse';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -18,7 +22,13 @@ function App() {
         return (
           <>
             <Hero />
+<<<<<<< HEAD
             <LearningPathways />
+=======
+            <WelcomeSection />
+            <SkillBadges />
+            <CourseLevelsSection />
+>>>>>>> 6a62b97a144015ac1fe817605d0ff785fb2856ad
             <About />
             <Offerings />
           </>
