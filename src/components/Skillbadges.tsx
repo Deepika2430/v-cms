@@ -30,7 +30,8 @@ const SkillBadges = () => {
       style={{
         padding: '40px 20px',
         textAlign: 'center',
-        backgroundColor: '#f9f9f9',
+        marginLeft: '105px',
+        marginRight: '105px',
       }}
     >
       <h2

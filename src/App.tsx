@@ -90,8 +90,8 @@ function App() {
             <InnovatorCarousel cards={cards} />
             <SkillBadges />
             <CourseLevelsSection />
-            <About />
-            <Offerings />
+            {/* <About />
+            <Offerings /> */}
           </>
         );
       case 'about':
