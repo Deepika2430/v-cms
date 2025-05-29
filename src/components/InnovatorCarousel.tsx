@@ -92,14 +92,14 @@ const InnovatorCarousel: React.FC<InnovatorCarouselProps> = ({ cards }) => {
 
   return (
     <div
-      className="relative overflow-hidden mx-20 px-10 w-full max-w-screen-lg py-0"
+      className="relative overflow-hidden mx-24 px-10 w-full max-w-screen-lg py-0"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       style={{ boxSizing: "border-box" }}
     >
       <div
         ref={sliderRef}
-        className="keen-slider pl-2 w-full max-w-screen-lg"
+        className="keen-slider pl-2 pr-2 w-full max-w-screen-lg"
         style={{ boxSizing: "border-box" }}
       >
         {cards.map((card, idx) => (
@@ -115,40 +115,40 @@ const InnovatorCarousel: React.FC<InnovatorCarouselProps> = ({ cards }) => {
 
       {/* Arrows */}
       {instanceRef.current && (
-        <>
-          {/* Left Arrow */}
-          <button
-            onClick={() => instanceRef.current?.prev()}
-            className="absolute top-1/2 -translate-y-1/2 -left-6 bg-white p-2 rounded-full shadow hover:bg-gray-200 z-10"
-            aria-label="Previous Slide"
-          >
-            <svg
-              aria-hidden="true"
-              className="w-6 h-6 text-gray-500"
-              viewBox="0 0 512 512"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M256 504C119 504 8 393 8 256S119 8 256 8s248 111 248 248-111 248-248 248zM142.1 273l135.5 135.5c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L226.9 256l101.6-101.6c9.4-9.4 9.4-24.6 0-33.9l-17-17c-9.4-9.4-24.6-9.4-33.9 0L142.1 239c-9.4 9.4-9.4 24.6 0 34z" />
-            </svg>
-          </button>
+  <>
+    {/* Left Arrow */}
+    <button
+      onClick={() => instanceRef.current?.prev()}
+      className="absolute top-1/2 -translate-y-1/2 -left-1 z-10 p-0 focus:outline-none focus:ring-0"
+      aria-label="Previous Slide"
+    >
+      <svg
+        aria-hidden="true"
+        className="w-8 h-8 text-gray-400 hover:text-gray-600 transition-colors"
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path fill="currentColor" d="M256 504C119 504 8 393 8 256S119 8 256 8s248 111 248 248-111 248-248 248zM142.1 273l135.5 135.5c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L226.9 256l101.6-101.6c9.4-9.4 9.4-24.6 0-33.9l-17-17c-9.4-9.4-24.6-9.4-33.9 0L142.1 239c-9.4 9.4-9.4 24.6 0 34z" />
+      </svg>
+    </button>
 
-          {/* Right Arrow */}
-          <button
-            onClick={() => instanceRef.current?.next()}
-            className="absolute top-1/2 -translate-y-1/2 -right-6 bg-white p-2 rounded-full shadow hover:bg-gray-200 z-10"
-            aria-label="Next Slide"
-          >
-            <svg
-              aria-hidden="true"
-              className="w-6 h-6 text-gray-500 rotate-180"
-              viewBox="0 0 512 512"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M256 504C119 504 8 393 8 256S119 8 256 8s248 111 248 248-111 248-248 248zM142.1 273l135.5 135.5c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L226.9 256l101.6-101.6c9.4-9.4 9.4-24.6 0-33.9l-17-17c-9.4-9.4-24.6-9.4-33.9 0L142.1 239c-9.4 9.4-9.4 24.6 0 34z" />
-            </svg>
-          </button>
-        </>
-      )}
+    {/* Right Arrow */}
+    <button
+      onClick={() => instanceRef.current?.next()}
+      className="absolute top-1/2 -translate-y-1/2 -right-1 p-0 z-50 focus:outline-none focus:ring-0"
+      aria-label="Next Slide"
+    >
+      <svg
+        aria-hidden="true"
+        className="w-8 h-8 text-gray-400 hover:text-gray-600 rotate-180 transition-colors"
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path fill="currentColor" d="M256 504C119 504 8 393 8 256S119 8 256 8s248 111 248 248-111 248-248 248zM142.1 273l135.5 135.5c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L226.9 256l101.6-101.6c9.4-9.4 9.4-24.6 0-33.9l-17-17c-9.4-9.4-24.6-9.4-33.9 0L142.1 239c-9.4 9.4-9.4 24.6 0 34z" />
+      </svg>
+    </button>
+  </>
+)}
 
       {/* Dots */}
       <div className="flex justify-center mt-6 space-x-2">

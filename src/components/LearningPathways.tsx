@@ -2,7 +2,7 @@ import React from "react";
 
 export default function LearningPathways(): JSX.Element {
   return (
-    <section className="relative overflow-hidden pt-2 md:py-20 px-20">
+    <section className="relative overflow-hidden pt-2 md:pt-20 pb-10 px-20">
       <div className="container mx-auto px-4">
         <div className="text-left mb-6">
           <h2 className="text-3xl md:text-4xl font-bold text-[#761587] font-[Poppins,sans-serif]">
