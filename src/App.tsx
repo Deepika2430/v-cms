@@ -26,8 +26,8 @@ function App() {
             <LearningPathways />
             <SkillBadges />
             <CourseLevelsSection />
-            <About />
-            <Offerings />
+            {/* <About />
+            <Offerings /> */}
           </>
         );
       case 'about':
