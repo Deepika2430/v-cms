@@ -12,6 +12,67 @@ import { Toaster } from '@/components/ui/toaster';
 import WelcomeSection from './components/SmartAcedamy';
 import SkillBadges from './components/Skillbadges';
 import CourseLevelsSection from './components/FindYourCourse';
+import InnovatorCarousel from "@/components/InnovatorCarousel";
+import { InnovatorCardProps } from "@/components/InnovatorCard";
+
+const cards: InnovatorCardProps[] = [
+  {
+    images: [
+      {
+        src: "https://vismayee.com/wp-content/uploads/2023/11/rocket-boy-idea@2x-768x512.png",
+        alt: "Rocket boy idea",
+        width: 768,
+        height: 512,
+      },
+    ],
+    grades: "Grades: III - XII",
+    title: "Innovator",
+    description:
+      "STEAM Activities, Design Thinking, Product Development, Research Papers, Intellectual Property Rights (Trademarks, Patents, Copyrights)",
+  },
+  {
+    images: [
+      {
+        src: "https://vismayee.com/wp-content/uploads/2023/11/rocket-boy-idea@2x-768x512.png",
+        alt: "Rocket boy idea",
+        width: 768,
+        height: 512,
+      },
+    ],
+    grades: "Grades: III - XII",
+    title: "Innovator",
+    description:
+      "STEAM Activities, Design Thinking, Product Development, Research Papers, Intellectual Property Rights (Trademarks, Patents, Copyrights)",
+  },
+  {
+    images: [
+      {
+        src: "https://vismayee.com/wp-content/uploads/2023/11/robo-girl-laptop@2x-768x512.png",
+        alt: "Second Card Image",
+        width: 768,
+        height: 512,
+      },
+    ],
+    grades: "Grades: III - XII",
+    title: "Robotics ",
+    description:
+      "Circuits and Simulation, Wheeled Robots, Humanoid Robots, AI Robots, Programming and Product Development",
+  },
+  {
+    images: [
+      {
+        src: "https://vismayee.com/wp-content/uploads/2023/11/robo-girl-laptop@2x-768x512.png",
+        alt: "Second Card Image",
+        width: 768,
+        height: 512,
+      },
+    ],
+    grades: "Grades: III - XII",
+    title: "Robotics ",
+    description:
+      "Circuits and Simulation, Wheeled Robots, Humanoid Robots, AI Robots, Programming and Product Development",
+  },
+];
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -24,6 +85,7 @@ function App() {
             <Hero />
             <WelcomeSection />
             <LearningPathways />
+            <InnovatorCarousel cards={cards} />
             <SkillBadges />
             <CourseLevelsSection />
             {/* <About />
@@ -47,9 +109,9 @@ function App() {
 
   return (
     <ThemeProvider defaultTheme="light">
-      <div className="min-h-screen flex flex-col">
+      <div className="min-h-screen flex flex-col overflow-x-hidden">
         <Header onNavigate={setCurrentPage} currentPage={currentPage} />
-        <main className="flex-grow">
+        <main className="flex-grow overflow-x-hidden">
           {renderPage()}
         </main>
         <Footer />

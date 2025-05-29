@@ -120,3 +120,8 @@ button:focus-visible {
     @apply bg-background text-foreground;
   }
 }
+
+/* in your global CSS or styles.css */
+.keen-slider__slide {
+  min-width: calc((100% / 4) - 10px);
+}
