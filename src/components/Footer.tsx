@@ -46,7 +46,7 @@ const Footer: React.FC = () => {
         </div>
       </div>
       {/* Main Footer Content */}
-      <div className="container mx-auto px-4">
+      <div className="mx-auto pl-[7rem] pr-[7rem] w-full py-4">
         <div className="grid grid-cols-[1fr_1fr_0.6fr_1fr] gap-6 text-gray-800">
           {/* Company Info */}
           <div className="flex flex-col space-y-4 p-[10px]">
