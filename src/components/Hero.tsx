@@ -3,10 +3,10 @@ import { CircleImage } from "./CircleImage";
 
 const Hero = () => {
   return (
-    <section className="relative overflow-hidden py-12 md:py-20 bg-background">
+    <section className="relative overflow-hidden py-12 md:pt-24 md:pb-1rem md:py-20 bg-background">
       <div className="container mx-auto px-0">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-0 ">
-          <div className="max-w-[100%] space-y-4 pl-20">
+          <div className="max-w-[100%] space-y-4 pl-20 pt-20">
             <h1 className="text-[45px] leading-[60px] font-[400] text-[#761587] font-[Poppins,sans-serif] ">
               The Smarter Way to <br />
               Learn Anything
