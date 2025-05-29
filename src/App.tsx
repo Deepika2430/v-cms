@@ -9,11 +9,12 @@ import Offerings from '@/components/Offerings';
 import Gallery from '@/components/Gallery';
 
 import { Toaster } from '@/components/ui/toaster';
-import WelcomeSection from './components/SmartAcedamy';
+import WelcomeSection from './components/SmartAcademy';
 import SkillBadges from './components/Skillbadges';
 import CourseLevelsSection from './components/FindYourCourse';
 import InnovatorCarousel from "@/components/InnovatorCarousel";
 import { InnovatorCardProps } from "@/components/InnovatorCard";
+import ImageGrid from './components/ImageGrid';
 
 const cards: InnovatorCardProps[] = [
   {
@@ -84,6 +85,7 @@ function App() {
           <>
             <Hero />
             <WelcomeSection />
+            <ImageGrid />
             <LearningPathways />
             <InnovatorCarousel cards={cards} />
             <SkillBadges />
