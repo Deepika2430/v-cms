@@ -1,122 +1,55 @@
-import { useState } from "react";
-import { ThemeProvider } from "@/components/theme-provider";
+import { BrowserRouter as Router, Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import Hero from "@/components/Hero";
-import LearningPathways from "@/components/LearningPathways";
-import About from "@/components/About";
+import { Toaster } from "@/components/ui/toaster";
+
+import Home from "@/pages/Home";
+import About from "@/pages/About";
 import Offerings from "@/components/Offerings";
 import PageHeader from "@/components/PageHeader";
 import Contact from "@/components/Contact";
 import Gallery from "@/components/Gallery";
 
-import { Toaster } from "@/components/ui/toaster";
-import WelcomeSection from "./components/SmartAcademy";
-import SkillBadges from "./components/Skillbadges";
-import CourseLevelsSection from "./components/FindYourCourse";
-import InnovatorCarousel from "@/components/InnovatorCarousel";
-import { InnovatorCardProps } from "@/components/InnovatorCard";
-import ImageGrid from './components/ImageGrid';
-
-const cards: InnovatorCardProps[] = [
-  {
-    images: [
-      {
-        src: "https://vismayee.com/wp-content/uploads/2023/11/rocket-boy-idea@2x-768x512.png",
-        alt: "Rocket boy idea",
-      },
-    ],
-    grades: "Grades: III - XII",
-    title: "Innovator",
-    description:
-      "STEAM Activities, Design Thinking, Product Development, Research Papers, Intellectual Property Rights (Trademarks, Patents, Copyrights)",
-  },
-  {
-    images: [
-      {
-        src: "https://vismayee.com/wp-content/uploads/2023/11/aero-space@2x-768x512.png",
-        alt: "Fourth Card Image",
-      },
-    ],
-    grades: "Grades: III - XII",
-    title: "Aerospace ",
-    description:
-      "Space and Astronomy, Unmanned Aerial Vehicles (Drones and RC Planes), Rovers, Telescope and Binoculars",
-  },
-  {
-    images: [
-      {
-        src: "https://vismayee.com/wp-content/uploads/2023/11/painting-school-768x512.jpg",
-        alt: "Second Card Image",
-      },
-    ],
-    grades: "Grades: III - XII",
-    title: "Creative Arts & Animation",
-    description:
-      "Graphic Design, Clay Sculpting, Sketching and Painting, Interior Designing, Animation, Photography,  and VFX",
-  },
-  {
-    images: [
-      {
-        src: "https://vismayee.com/wp-content/uploads/2023/11/robo-girl-laptop@2x-768x512.png",
-        alt: "Second Card Image",
-      },
-    ],
-    grades: "Grades: III - XII",
-    title: "Robotics ",
-    description:
-      "Circuits and Simulation, Wheeled Robots, Humanoid Robots, AI Robots, Programming and Product Development",
-  },
-];
-
 function App() {
-  const [currentPage, setCurrentPage] = useState("home");
+  return (
+    <Router>
+      <MainApp />
+    </Router>
+  );
+}
 
-  const renderPage = () => {
-    switch (currentPage) {
-      case "home":
-        return (
-          <>
-            <Hero />
-            <WelcomeSection />
-            <ImageGrid />
-            <LearningPathways />
-            <InnovatorCarousel cards={cards} />
-            <SkillBadges />
-            <CourseLevelsSection />
-            {/* <About />
-            <Offerings /> */}
-          </>
-        );
-      case "about":
-        return <About fullPage />;
-      case "offerings":
-        return <Offerings fullPage />;
-      case "gallery":
-        return <Gallery />;
-      case "contact":
-        return (<> <PageHeader title={"Contact"} /><Contact /> </>)
-      case "embedded":
-        return (
-          <div className="container py-12">
-            Embedded Systems Development content
-          </div>
-        );
-      default:
-        return <Hero />;
-    }
+function MainApp() {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  // Determine the current page from the URL
+  const currentPath = location.pathname;
+  const currentPage = currentPath === "/" ? "home" : currentPath.slice(1); // e.g., "/about" -> "about"
+
+  // Handle navigation based on page key
+  const handleNavigate = (page: string) => {
+    const path = page === "home" ? "/" : `/${page}`;
+    navigate(path);
   };
 
   return (
-    <ThemeProvider defaultTheme="light">
-      <div className="min-h-screen flex flex-col overflow-x-hidden">
-        <Header onNavigate={setCurrentPage} currentPage={currentPage} />
-        <main className="flex-grow overflow-x-hidden">{renderPage()}</main>
-        <Footer currentPage={currentPage} onNavigate={setCurrentPage} />
+    <div className="min-h-screen flex flex-col overflow-x-hidden">
+      <Header currentPage={currentPage} onNavigate={handleNavigate} />
 
-        <Toaster />
-      </div>
-    </ThemeProvider>
+      <main className="flex-grow overflow-x-hidden">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About fullPage />} />
+          <Route path="/offerings" element={<Offerings fullPage />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/contact" element={<div className="container py-12">Contact page content</div>} />
+          <Route path="/embedded" element={<div className="container py-12">Embedded Systems Development content</div>} />
+        </Routes>
+      </main>
+
+      <Footer currentPage={currentPage} onNavigate={handleNavigate} />
+      <Toaster />
+    </div>
   );
 }
 
