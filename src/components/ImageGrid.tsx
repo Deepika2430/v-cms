@@ -71,7 +71,7 @@ const ImageMasonry = () => {
 
   return (
     <section className="w-full bg-white py-10">
-      <div className="flex justify-center gap-4 max-w-7xl mx-auto">
+      <div className="flex justify-center gap-6 max-w-7xl mx-auto">
         {columns.map((column, colIndex) => (
           <div key={colIndex} className={column.columnClass}>
             {column.images.map((image, imgIndex) => (
@@ -79,7 +79,7 @@ const ImageMasonry = () => {
                 key={imgIndex}
                 src={image.src}
                 alt={image.alt}
-                className={`${image.className} object-cover rounded-lg shadow-md hover:scale-105 transition-transform duration-500 ease-in-out`}
+                className={`${image.className} object-cover rounded-3xl shadow-md hover:animate-hang-sink transition-all duration-500 ease-in-out`}
               />
             ))}
           </div>
