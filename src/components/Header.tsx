@@ -76,7 +76,7 @@ const Header = ({ onNavigate, currentPage }: HeaderProps) => {
       {/* Main Navigation */}
       <div className="container mx-[101.500px] w-[90%] pt-4 flex justify-between items-center">
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center space-x-4">
+        <nav className="hidden md:flex items-center space-x-4 ">
           <NavItem
             label="Home"
             active={currentPage === "home"}
@@ -91,7 +91,7 @@ const Header = ({ onNavigate, currentPage }: HeaderProps) => {
             <DropdownMenuTrigger asChild>
               <button
                 className={cn(
-                  "px-3 py-2 rounded-md text-[21px] font-medium font-questrial flex items-center transition-colors",
+                  "px-3 py-2 rounded-md text-[21px] font-medium font-questrial flex items-center transition-colors focus:outline-none focus:ring-0",
                   currentPage === "offerings"
                     ? "text-orange-500 underline font-bold"
                     : "text-[#761587] hover:text-orange-500 hover:underline"
@@ -247,7 +247,7 @@ const NavItem = ({ label, active, onClick }: NavItemProps) => {
     <button
       onClick={onClick}
       className={cn(
-        "px-3 py-2 rounded-md text-[21px] font-medium font-questrial",
+        "px-3 py-2 rounded-md text-[21px] font-medium font-questrial focus:outline-none focus:ring-0",
         active
           ? "text-orange-500 underline font-bold"
           : "text-[#761587] hover:text-orange-500 hover:underline"

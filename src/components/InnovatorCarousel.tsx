@@ -151,12 +151,12 @@ const InnovatorCarousel: React.FC<InnovatorCarouselProps> = ({ cards }) => {
 )}
 
       {/* Dots */}
-      <div className="flex justify-center mt-6 space-x-2">
+      <div className="flex justify-center mt-6 space-x-2 ">
         {Array.from({ length: totalDots }).map((_, idx) => (
           <button
             key={idx}
-            onClick={() => instanceRef.current?.moveToSlideRelative(idx)}
-            className={`rounded-full p-1 transition-colors ${
+            onClick={() => instanceRef.current?.moveToIdx(idx)}
+            className={`rounded-full focus:outline-none focus:ring-0 p-1 transition-colors ${
               Math.floor(currentSlide / slidesPerView) === idx
                 ? "bg-blue-500"
                 : "bg-gray-300"
