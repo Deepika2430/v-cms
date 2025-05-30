@@ -15,18 +15,23 @@ const Hero = () => {
             <span className="text-[55px] font-[500] text-[#F37335] underline font-[Questrial,sans-serif]">
               Experiential Learning
             </span>
-            <p className="text-sm text-[#222] leading-relaxed mt-5 max-w-[500px]">
-              Experiential Learning emphasizes hands-on, practical experiences
-              as a primary means of acquiring knowledge and skills. It
-              encourages active engagement with the subject matter, often
-              through real-world activities, simulations, experiments, and
-              problem-solving tasks. It fosters a deeper understanding of
-              concepts and promotes the development of critical thinking,
-              problem-solving, and decision-making abilities. It typically
-              follows a cycle of “do, reflect, and apply,” where learners
-              participate in activities, reflect on their experiences, and then
-              apply their insights to further learning.
-            </p>
+            <div className="relative max-w-[500px]">
+              <span className="absolute text-[100px] md:text-[100px] text-red-100 opacity-1 top-28 left-24 pointer-events-none select-none z-0 leading-none font-questrial">
+                iSTEAM
+              </span>
+              <p className="relative text-sm text-[#222] leading-relaxed mt-5 z-10">
+                Experiential Learning emphasizes hands-on, practical experiences
+                as a primary means of acquiring knowledge and skills. It
+                encourages active engagement with the subject matter, often
+                through real-world activities, simulations, experiments, and
+                problem-solving tasks. It fosters a deeper understanding of
+                concepts and promotes the development of critical thinking,
+                problem-solving, and decision-making abilities. It typically
+                follows a cycle of “do, reflect, and apply,” where learners
+                participate in activities, reflect on their experiences, and
+                then apply their insights to further learning.
+              </p>
+            </div>
           </div>
 
           <div className="relative">

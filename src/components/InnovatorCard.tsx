@@ -21,8 +21,10 @@ const InnovatorCard: React.FC<InnovatorCardProps> = ({
   description,
 }) => {
   return (
-    <div className="flex flex-col items-center space-y-6 w-full h-full px-4 box-border">
-      <div className="flex flex-wrap justify-center gap-4">
+    <div
+      className="w-full h-full shadow-emerald-50 bg-white rounded-3xl shadow-md flex flex-col items-start hover:shadow-[0_4px_15px_rgba(59,130,246,0.6)] font-questrial"
+    >
+      <div className="pb-0">
         {images.map(({ src, alt, width, height }, idx) => (
           <img
             key={idx}
@@ -32,14 +34,18 @@ const InnovatorCard: React.FC<InnovatorCardProps> = ({
             height={height}
             loading="lazy"
             decoding="async"
-            className="rounded shadow-md w-full h-auto object-contain max-h-48"
+            className="w-full h-auto object-cover rounded-t"
           />
         ))}
       </div>
-      <div className="w-full border-t border-gray-300" />
-      <p className="text-center text-gray-700 text-base font-medium">{grades}</p>
-      <h4 className="text-center text-2xl font-semibold">{title}</h4>
-      <p className="text-center text-gray-600 text-sm">{description}</p>
+
+      {/* Orange line fits image width exactly */}
+      <div className="w-full border-t-2 border-orange-500 px-5" />
+      <div className="px-4">
+        <p className="text-left italic font-poppins text-gray-700 font-medium pt-2 ">{grades}</p>
+        <h4 className="text-left text-[#761587] text-2xl font-semibold py-2">{title}</h4>
+        <p className="text-left text-gray-600 text-sm py-0">{description}</p>
+      </div>
     </div>
   );
 };
