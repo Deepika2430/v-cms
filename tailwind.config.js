@@ -60,6 +60,23 @@ export default {
         },
       },
       keyframes: {
+        'zoom-out': {
+          '0%': { transform: 'scale(1)' },
+          '100%': { transform: 'scale(0.95)' }, // Zoom out effect
+        },
+         'zoom-in-out': {
+          '0%': { transform: 'scale(1)' },
+          '50%': { transform: 'scale(1.2)' },
+          '100%': { transform: 'scale(1)' },
+        },
+        'zoom-in': {
+          '0%': { transform: 'scale(0.3)' },
+          '100%': { transform: 'scale(1.0)' }, // zoom in to 1.2x
+        },
+        'hang-sink': {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(4px)' }, // slight bob effect
+        },
         'accordion-down': {
           from: { height: '0' },
           to: { height: 'var(--radix-accordion-content-height)' },
@@ -72,11 +89,20 @@ export default {
           '0%': { transform: 'translateX(40px)', opacity: '0' },
           '100%': { transform: 'translateX(0)', opacity: '1' },
         },
+        bounceOnce: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10%)' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
-        slide: 'slideIn 0.6s ease-out',
+        'bounce-once': 'bounceOnce 0.5s ease',
+        'hang-sink': 'hang-sink 1s ease-in-out infinite',
+        'zoom-out': 'zoom-out 0.8s ease-out forwards',
+        'zoom-in': 'zoom-in 2s ease-out forwards',
+        'zoom-in-out': 'zoom-in-out 2s ease-in-out forwards',
+        slide: 'slideIn 0.9s ease-out',
       },
     },
   },
