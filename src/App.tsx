@@ -116,7 +116,8 @@ function App() {
         <main className="flex-grow overflow-x-hidden">
           {renderPage()}
         </main>
-        <Footer />
+        <Footer currentPage={currentPage} onNavigate={setCurrentPage} />
+
         <Toaster />
       </div>
     </ThemeProvider>

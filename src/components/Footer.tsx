@@ -12,9 +12,23 @@ import {
   Youtube,
 } from "lucide-react";
 import ContactForm from "./ContactForm";
+import { NavLink } from "react-router-dom";
 import NewsletterForm from "./NewsletterForm";
 
-const Footer: React.FC = () => {
+interface FooterProps {
+  currentPage: string;
+  onNavigate: (page: string) => void;
+}
+
+const menuItems = [
+  { label: "Home", key: "home" },
+  { label: "About", key: "about" },
+  { label: "Offerings", key: "offerings" },
+  { label: "Gallery", key: "gallery" },
+  { label: "Contact", key: "contact" },
+];
+
+const Footer: React.FC<FooterProps> = ({ currentPage, onNavigate }) => {
   return (
     <footer className="w-full bg-[#F2F7FD] overflow-x-hidden px-8">
       {/* Contact Form Section */}
@@ -131,47 +145,22 @@ const Footer: React.FC = () => {
               <h3 className="text-xl font-semibold text-purple-800 mb-4">
                 Our Links
               </h3>
+              {/* Navigation Links Section */}
               <ul className="space-y-2">
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-600 hover:text-orange-500 transition-colors"
-                  >
-                    Home
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-600 hover:text-orange-500 transition-colors"
-                  >
-                    About
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-600 hover:text-orange-500 transition-colors"
-                  >
-                    Offerings
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-600 hover:text-orange-500 transition-colors"
-                  >
-                    Gallery
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-600 hover:text-orange-500 transition-colors"
-                  >
-                    Contact
-                  </a>
-                </li>
+                {menuItems.map((item) => (
+                  <li key={item.key}>
+                    <a
+                      onClick={() => onNavigate(item.key)}
+                      className={`${
+                        currentPage === item.key
+                          ? "text-orange-500 font-semibold"
+                          : "text-gray-600"
+                      }text-gray-600 hover:text-orange-500 cursor-pointer transition-colors`}
+                    >
+                      {item.label}
+                    </a>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
