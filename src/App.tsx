@@ -6,6 +6,8 @@ import Hero from "@/components/Hero";
 import LearningPathways from "@/components/LearningPathways";
 import About from "@/components/About";
 import Offerings from "@/components/Offerings";
+import PageHeader from "@/components/PageHeader";
+import Contact from "@/components/Contact";
 import Gallery from "@/components/Gallery";
 
 import { Toaster } from "@/components/ui/toaster";
@@ -93,7 +95,7 @@ function App() {
       case "gallery":
         return <Gallery />;
       case "contact":
-        return <div className="container py-12">Contact page content</div>;
+        return (<> <PageHeader title={"Contact"} /><Contact /> </>)
       case "embedded":
         return (
           <div className="container py-12">
