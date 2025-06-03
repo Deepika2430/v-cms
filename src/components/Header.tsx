@@ -122,8 +122,8 @@ const Header = ({ onNavigate, currentPage }: HeaderProps) => {
           />
           <NavItem
             label="Embedded Systems Development"
-            active={currentPage === "embedded"}
-            onClick={() => handleNavigate("embedded")}
+            active={currentPage === "embedsys"}
+            onClick={() => handleNavigate("embedsys")}
           />
 
           <div className="ml-4 flex items-center space-x-5 pl-20">
@@ -194,7 +194,7 @@ const Header = ({ onNavigate, currentPage }: HeaderProps) => {
                   />
                   <MobileNavItem
                     label="Embedded Systems"
-                    onClick={() => handleNavigate("embedded")}
+                    onClick={() => handleNavigate("embedsys")}
                   />
                 </nav>
                 <div className="mt-auto pb-4 px-4">

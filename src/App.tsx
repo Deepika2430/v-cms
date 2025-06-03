@@ -7,6 +7,7 @@ import Home from "@/pages/Home";
 import About from "@/pages/About";
 import Offerings from "@/components/Offerings";
 import Contact from "@/pages/Contact";
+import Embedsys from "@/pages/Embedsys";
 import Gallery from "@/components/Gallery";
 
 function App() {
@@ -42,8 +43,7 @@ function MainApp() {
           <Route path="/offerings" element={<Offerings fullPage />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/contact" element={<div className="container py-12">Contact page content</div>} />
-          <Route path="/embedded" element={<div className="container py-12">Embedded Systems Development content</div>} />
+          <Route path="/embedsys" element={<Embedsys />} />
         </Routes>
       </main>
 
