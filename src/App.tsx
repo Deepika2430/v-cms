@@ -8,7 +8,7 @@ import About from "@/pages/About";
 import Offerings from "@/components/Offerings";
 import Contact from "@/pages/Contact";
 import Embedsys from "@/pages/Embedsys";
-import Gallery from "@/components/Gallery";
+import Gallery from "@/pages/Gallery";
 
 function App() {
   return (

@@ -13,6 +13,8 @@ export default {
         sans: ['Questrial', 'Poppins', 'ui-sans-serif', 'system-ui'],
         questrial: ['Questrial', 'sans-serif'],
         poppins: ['Poppins', 'sans-serif'],
+        nunito: ['"Nunito"', 'sans-serif'],
+        pacifico: ['"Pacifico"', 'cursive'],
       },
       borderRadius: {
         lg: 'var(--radius)',
