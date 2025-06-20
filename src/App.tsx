@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation, useNavigate } from
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Toaster } from "@/components/ui/toaster";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 
 import Home from "@/pages/Home";
 import About from "@/pages/About";
@@ -49,6 +50,7 @@ function MainApp() {
 
       <Footer currentPage={currentPage} onNavigate={handleNavigate} />
       <Toaster />
+      <ScrollToTopButton />
     </div>
   );
 }
